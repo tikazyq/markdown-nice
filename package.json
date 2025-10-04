@@ -21,7 +21,8 @@
     "analyze": "source-map-explorer build/static/js/*.js",
     "lint": "eslint src --ext ts,tsx,js --fix",
     "publish:npm": "cross-env NODE_ENV=production && rm -rf lib && mkdir lib && cross-env BABEL_ENV=production npx babel src --out-dir lib --copy-files",
-    "storybook": "npm run publish:npm && start-storybook -p 9001 -c .storybook"
+    "storybook": "npm run publish:npm && start-storybook -p 9001 -c .storybook",
+    "api-server": "node api-server.js"
   },
   "dependencies": {
     "@sitdown/juejin": "^1.1.1",
@@ -32,7 +33,9 @@
     "antd": "^3.15.1",
     "axios": "^0.18.0",
     "diff-match-patch": "^1.0.4",
+    "express": "^4.21.2",
     "highlight.js": "^9.15.6",
+    "jsdom": "^23.2.0",
     "juice": "^5.2.0",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
