@@ -2,6 +2,20 @@
 
 This package provides both an API server and a CLI tool to convert markdown content to WeChat Official Account compatible HTML and other platforms without using the web UI.
 
+## CLI vs API Server
+
+**Use the CLI when:**
+- Converting markdown files locally or in scripts
+- Integrating into build processes
+- One-off conversions
+- No need for a running server
+
+**Use the API Server when:**
+- Building web services or applications
+- Need remote access to conversion
+- Multiple concurrent conversions
+- RESTful API integration
+
 ## Quick Start
 
 ### Installation
