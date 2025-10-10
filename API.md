@@ -9,13 +9,13 @@ This API server allows you to programmatically convert markdown content to WeCha
 Install the required dependencies:
 
 ```bash
-npm install --legacy-peer-deps
+pnpm install
 ```
 
 ### Starting the Server
 
 ```bash
-npm run api-server
+pnpm api-server
 ```
 
 Or directly:
@@ -221,7 +221,7 @@ For production use:
 
 1. **Use a process manager** like PM2:
    ```bash
-   npm install -g pm2
+   pnpm install -g pm2
    pm2 start api-server.js --name markdown-api
    ```
 
