@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# pnpm
+.pnpm-debug.log
+
 # testing
 /coverage
 
@@ -25,3 +28,7 @@ yarn-error.log*
 dist
 package-lock.json
 lib
+
+# API output examples
+example-output.html
+test-output-*.html
