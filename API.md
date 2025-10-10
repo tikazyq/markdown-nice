@@ -1,6 +1,6 @@
-# Markdown Nice API
+# Markdown Nice API & CLI
 
-This API server allows you to programmatically convert markdown content to WeChat Official Account compatible HTML and other platforms without using the web UI.
+This package provides both an API server and a CLI tool to convert markdown content to WeChat Official Account compatible HTML and other platforms without using the web UI.
 
 ## Quick Start
 
@@ -28,6 +28,68 @@ The server will start on port 3001 by default. You can change this by setting th
 
 ```bash
 PORT=8080 node api-server.js
+```
+
+### Using the CLI
+
+```bash
+# Show help
+npm run cli -- --help
+
+# Or directly
+node cli.js --help
+
+# Convert a markdown file to WeChat HTML
+npm run cli -- input.md -o output.html
+
+# Convert to Zhihu format
+npm run cli -- input.md -p zhihu -o output.html
+
+# Read from stdin
+cat input.md | npm run cli -- -o output.html
+```
+
+## CLI Usage
+
+The CLI tool provides a simple command-line interface to convert markdown files without starting a server.
+
+### Basic Usage
+
+```bash
+cli.js [options] <input-file>
+```
+
+### Options
+
+- `-o, --output <file>` - Output file (default: stdout)
+- `-p, --platform <name>` - Target platform: `wechat` (default), `zhihu`
+- `-h, --help` - Show help message
+
+### Examples
+
+**Convert a file to WeChat HTML:**
+```bash
+node cli.js README.md -o output.html
+```
+
+**Convert to Zhihu format:**
+```bash
+node cli.js article.md -p zhihu -o zhihu-output.html
+```
+
+**Read from stdin and write to stdout:**
+```bash
+cat article.md | node cli.js
+```
+
+**Pipeline usage:**
+```bash
+cat article.md | node cli.js -o output.html
+```
+
+**Using npm script:**
+```bash
+npm run cli -- input.md -o output.html
 ```
 
 ## API Endpoints
