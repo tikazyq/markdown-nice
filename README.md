@@ -12,6 +12,35 @@
 - 欢迎[在线使用](https://mdnice.com/)
 - 有疑问请参考 [如何有效的解决 mdnice 相关问题？](https://github.com/mdnice/markdown-nice/issues/163)
 
+## CLI 和 API
+
+除了在线编辑器，还提供了命令行工具和 API 服务器：
+
+**命令行工具（CLI）**
+```bash
+# 转换 Markdown 文件为微信公众号 HTML
+node cli.js input.md -o output.html
+
+# 转换为知乎格式
+node cli.js input.md -p zhihu -o output.html
+
+# 查看帮助
+node cli.js --help
+```
+
+**API 服务器**
+```bash
+# 启动 API 服务器
+npm run api-server
+
+# 使用 API 转换
+curl -X POST http://localhost:3001/api/convert \
+  -H "Content-Type: application/json" \
+  -d '{"markdown": "# Hello", "platform": "wechat"}'
+```
+
+详细文档请参考 [API.md](./API.md)
+
 ## 主题
 
 [Markdown Nice 主题列表](https://product.mdnice.com/themes/)
